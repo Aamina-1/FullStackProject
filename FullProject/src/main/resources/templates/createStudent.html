@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<title>Create new Student</title>
+
+</head>
+<body>
+<div class="container">
+		<div class="row">
+			<h1>Add new Student</h1>
+		</div>
+		<div class="card-body">
+			<form th:action = @{/insertStudents} th:object="${stdObj}" method = "post">
+				<div class="form-group">
+					<label> Enter first name: </label> <input type="text" name="fName"
+						th:field="*{firstname}" class="form-control"
+						placeholder="Enter your firstname" />
+						
+						<label> Enter last name: </label> 
+							<input type="text" name="lName" 
+							th:field="*{lastname}"
+						class="form-control" placeholder="Enter your lastname" /> 
+						
+						<label>Enter FavSub: </label> 
+						<input type="text" name="favSub"
+						th:field="*{favSub}" class="form-control"
+						placeholder="Enter your favSub" />
+				</div>
+				
+				<div class = "box-footer">
+				<button type = "submit" class = "btn btn-primary">
+				ADD
+				</button>
+				
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+<style>
+body {
+  background-image: url("https://png.pngtree.com/background/20210710/original/pngtree-youth-geometric-gradient-architectural-silhouette-inspirational-picture-image_976352.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+</style>
+</html>
